@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0705" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Mazebound" />
+    <meta name="description" content="MAZEBOUND — Expedition One: The Sunken Temple. A torch-lit maze adventure." />
+    <link rel="manifest" href="/mazebound-play/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/mazebound-play/icons/icon-180.png" />
+    <link rel="icon" href="/mazebound-play/icons/icon-192.png" type="image/png" />
+    <title>MAZEBOUND — The Sunken Temple</title>
+    <script type="module" crossorigin src="/mazebound-play/assets/index-D9UDHLRa.js"></script>
+    <link rel="stylesheet" crossorigin href="/mazebound-play/assets/index-BbudV4cA.css">
+  </head>
+  <body>
+    <div id="game">
+      <canvas id="c"></canvas>
+      <div id="vignette" aria-hidden="true"></div>
+      <div id="grain" aria-hidden="true"></div>
+
+      <!-- In-world HUD -->
+      <div id="hud" hidden>
+        <div id="objective" class="chip tl">
+          <span class="chip-rule"></span>
+          <span id="objective-text">Enter the temple</span>
+        </div>
+        <div class="tr-stack">
+          <div id="coins" class="chip"><span class="coin-ico" aria-hidden="true"></span><span id="coin-count">0</span></div>
+          <button id="btn-journal" class="icon-btn" aria-label="Journal">✦</button>
+          <button id="btn-pause" class="icon-btn" aria-label="Pause">❚❚</button>
+        </div>
+        <div id="stick" hidden><div id="stick-nub"></div></div>
+        <button id="btn-action" hidden><span id="btn-action-label">Examine</span></button>
+        <div id="toast" hidden></div>
+        <div id="subtitle" hidden></div>
+      </div>
+
+      <!-- Dialogue sheet -->
+      <div id="dialogue" hidden>
+        <div class="sheet">
+          <div id="dlg-speaker">The Warden</div>
+          <div id="dlg-text"></div>
+          <div id="dlg-choices"></div>
+        </div>
+      </div>
+
+      <!-- Journal -->
+      <div id="journal" class="panel-wrap" hidden>
+        <div class="panel">
+          <h2>Expedition Journal</h2>
+          <div id="journal-quests"></div>
+          <h3>Relics</h3>
+          <div id="journal-relics" class="relic-grid"></div>
+          <button class="ghost-btn" id="btn-journal-close">Close</button>
+        </div>
+      </div>
+
+      <!-- Pause / settings -->
+      <div id="pause" class="panel-wrap" hidden>
+        <div class="panel">
+          <h2>Rest a Moment</h2>
+          <div class="setting"><label for="set-sens">Look sensitivity</label><input id="set-sens" type="range" min="30" max="170" value="100" /></div>
+          <div class="setting"><label for="set-invert">Invert look</label><input id="set-invert" type="checkbox" /></div>
+          <div class="setting"><label for="set-hand">Left-handed</label><input id="set-hand" type="checkbox" /></div>
+          <div class="setting"><label for="set-quality">Graphics</label>
+            <select id="set-quality"><option value="auto">Auto</option><option value="performance">Performance</option><option value="quality">Quality</option></select>
+          </div>
+          <div class="setting"><label for="set-music">Music</label><input id="set-music" type="range" min="0" max="100" value="80" /></div>
+          <div class="setting"><label for="set-sfx">Sound</label><input id="set-sfx" type="range" min="0" max="100" value="90" /></div>
+          <div class="row">
+            <button class="gold-btn" id="btn-resume">Continue</button>
+            <button class="ghost-btn" id="btn-quit">Title</button>
+          </div>
+          <div class="fineprint">Textures: Poly Haven (CC0) · Built on three.js · MeltingPixels</div>
+        </div>
+      </div>
+
+      <!-- Ending tally -->
+      <div id="ending" class="panel-wrap" hidden>
+        <div class="panel">
+          <div class="end-kicker">Expedition One</div>
+          <h2 id="end-title">The Temple Yields</h2>
+          <p id="end-body"></p>
+          <div id="end-stats"></div>
+          <div class="row">
+            <button class="gold-btn" id="btn-end-roam">Keep Exploring</button>
+          </div>
+          <div class="fineprint">Expedition Two — soon.</div>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <div id="title">
+        <div id="embers" aria-hidden="true"></div>
+        <div class="title-inner">
+          <div class="title-kicker">An Anthology of Lost Places</div>
+          <h1 class="wordmark">MAZE<span>BOUND</span></h1>
+          <div class="title-rule"></div>
+          <div class="title-sub">Expedition One · The Sunken Temple</div>
+          <div class="title-menu">
+            <button class="gold-btn" id="btn-begin">Begin Expedition</button>
+            <button class="ghost-btn" id="btn-continue" hidden>Continue</button>
+            <button class="ghost-btn" id="btn-title-settings">Settings</button>
+          </div>
+          <div class="title-hint" id="title-hint">Headphones recommended</div>
+        </div>
+      </div>
+
+      <!-- Boot splash -->
+      <div id="boot">
+        <div class="boot-mark">◈</div>
+        <div class="boot-bar"><div id="boot-fill"></div></div>
+        <div id="boot-tip">Lighting the torches…</div>
+      </div>
+    </div>
+  </body>
+</html>

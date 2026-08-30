@@ -1,0 +1,14 @@
+{
+  "name": "MAZEBOUND — The Sunken Temple",
+  "short_name": "Mazebound",
+  "description": "A torch-lit maze adventure. Expedition One: The Sunken Temple.",
+  "start_url": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#0b0705",
+  "theme_color": "#0b0705",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
