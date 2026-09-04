@@ -18,8 +18,8 @@
     <link rel="apple-touch-icon" href="/mazebound-play/icons/icon-180.png" />
     <link rel="icon" href="/mazebound-play/icons/icon-192.png" type="image/png" />
     <title>MAZEBOUND — The Sunken Temple</title>
-    <script type="module" crossorigin src="/mazebound-play/assets/index-xGZSvO66.js"></script>
-    <link rel="stylesheet" crossorigin href="/mazebound-play/assets/index-uKHf4of3.css">
+    <script type="module" crossorigin src="/mazebound-play/assets/index-CiEXcw7T.js"></script>
+    <link rel="stylesheet" crossorigin href="/mazebound-play/assets/index-DBuReCbD.css">
   </head>
   <body>
     <div id="game">
@@ -95,6 +95,36 @@
             <button class="gold-btn" id="btn-end-roam">Keep Exploring</button>
           </div>
           <div class="fineprint">Expedition Two — soon.</div>
+        </div>
+      </div>
+
+      <!-- Brazier ritual: bank, museum, tease, goodnight -->
+      <div id="rest" class="panel-wrap" hidden>
+        <div class="panel">
+          <div class="end-kicker">The flame is banked</div>
+          <h2>Rest a While</h2>
+          <p id="rest-body"></p>
+          <div id="rest-stats"></div>
+          <h3>Recovered</h3>
+          <div id="rest-relics" class="relic-grid museum"></div>
+          <p id="rest-tease" class="tease"></p>
+          <div class="row">
+            <button class="gold-btn" id="btn-rest-go">Keep Going</button>
+            <button class="ghost-btn" id="btn-rest-sleep">Sleep</button>
+          </div>
+          <div class="fineprint" id="rest-goodnight"></div>
+        </div>
+      </div>
+
+      <!-- Previously… (resume card) -->
+      <div id="previously" class="panel-wrap" hidden>
+        <div class="panel">
+          <div class="end-kicker">Previously…</div>
+          <div id="prev-lines"></div>
+          <p id="prev-choice" class="tease" hidden></p>
+          <div class="row">
+            <button class="gold-btn" id="btn-prev-continue">Take up the torch</button>
+          </div>
         </div>
       </div>
 
