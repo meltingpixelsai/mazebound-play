@@ -1,7 +1,7 @@
 {
-  "name": "MAZEBOUND — The Sunken Temple",
+  "name": "MAZEBOUND — The Drowned Approach",
   "short_name": "Mazebound",
-  "description": "A torch-lit maze adventure. Expedition One: The Sunken Temple.",
+  "description": "Explore coastal ruins and ancient waterworks in a partly drowned world.",
   "start_url": "./",
   "display": "fullscreen",
   "orientation": "any",

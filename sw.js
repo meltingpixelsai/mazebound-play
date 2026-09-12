@@ -6,7 +6,7 @@
  * - shell: network-first with cache fallback (offline still boots)
  * Bump VERSION on strategy changes; activate prunes every older cache.
  */
-const VERSION = 'v2'
+const VERSION = 'v3'
 const STATIC_CACHE = `mb-static-${VERSION}`
 const CORE_CACHE = `mb-core-${VERSION}`
 
@@ -18,7 +18,7 @@ self.addEventListener('activate', (e) => {
   e.waitUntil(
     (async () => {
       const names = await caches.keys()
-      await Promise.all(names.filter((n) => n !== STATIC_CACHE && n !== CORE_CACHE).map((n) => caches.delete(n)))
+      await Promise.all(names.filter((n) => n.startsWith('mb-') && n !== STATIC_CACHE && n !== CORE_CACHE).map((n) => caches.delete(n)))
       await self.clients.claim()
     })(),
   )
